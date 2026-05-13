@@ -1,0 +1,341 @@
+
+/* RESET Y BASE */
+/* Limpia los estilos por defecto del navegador y aplica la imagen de fondo del sitio. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  color: #fff7fb;
+  background-color: #75492f;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  background-image: url('../img/fondo1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter:
+    brightness(1.05)
+    contrast(1.15)
+    saturate(1.4);
+
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.35);
+}
+
+
+
+/* TIPOGRAFÍA */
+/* Define los tamaños y pesos de los titulos h1 y h2 del sitio. */
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: .5rem 0;
+}
+
+h2 {
+  color: #fff7fb;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin: 3rem 0;
+}
+
+
+
+/* CONTENIDO PRINCIPAL */
+/* Estructura del <main> donde va el contenido de cada pagina. */
+
+main {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 2rem;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+/* BOTONES Y COLORES */
+/* Clases reutilizables que aplico a cualquier elemento sin repetir codigo. */
+
+.btn {
+  border: none;
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 1.6rem;
+  border-radius: 1rem;
+}
+
+.bg-primary {
+  background-color: #8b752d;
+}
+
+.bg-secondary {
+  background-color: #f2c66d;
+}
+
+.text-light {
+  color: #ffffff;
+}
+
+.text-dark {
+  color: #2a1e35;
+}
+
+.text-secondary {
+  color: #f2c66d;
+}
+
+
+
+/* HEADER Y FOOTER */
+/* Estilos compartidos entre la cabecera y el pie de pagina. */
+
+header,
+footer {
+  background: #504770;
+  color: #ebe2db;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* LOGO */
+/* Tamaño del logo y animacion al pasar el mouse por encima. */
+
+.div-logo {
+  margin-left: 2rem;
+  font-weight: bold;
+}
+
+.logo-img {
+  height: 9rem;
+  width: auto;
+  display: block;
+  padding: 0.5rem;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+
+/* NAVEGACIÓN */
+/* Estilos del menu de Inicio y Contacto en el header. */
+
+.logo,
+.header-nav ul li a {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #fff7fb;
+  display: inline-block;
+  padding: 1.5rem;
+}
+
+.header-nav ul,
+footer .footer-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+/* FOOTER */
+/* Centra el texto del credito y ubica los iconos sociales a la derecha. */
+
+footer {
+  justify-content: center;
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer nav {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-list li {
+  padding: 1rem;
+}
+
+.footer-list img {
+  width: 4rem;
+  padding: 0.5rem;
+}
+
+
+
+/* PÁGINA HOME */
+/* Estilos del parrafo de bienvenida y las tarjetas de productos. */
+
+.parrafo {
+  width: 80%;
+  text-align: center;
+  font-size: 2rem;
+  padding: 3rem;
+}
+
+.contenedor-tarjetas {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #8a79a8;
+  color: #2a1e35;
+  width: 20rem;
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding-bottom: 2rem;
+}
+
+.card img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+}
+
+
+
+/* DETALLES DE ITEMS */
+/* Lista de propiedades de cada item Dota mostrada como mini tabla. */
+
+.item-detalle {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1rem;
+
+  background-color: #8a79a8;
+  color: #2a1e35;
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.item-detalle dt {
+  font-weight: bold;
+  color: #2a1e35;
+}
+
+.item-detalle dt::after {
+  content: ":";
+}
+
+.item-detalle dd {
+  text-align: right;
+  font-style: italic;
+}
+
+
+
+/* PÁGINA CONTACTO */
+/* Estilos del formulario de contacto, inputs y textarea. */
+
+.titulo-contacto {
+  margin: 2rem 0;
+}
+
+.form-contacto {
+  background-color: #8a79a8;
+  color: #2a1e35;
+  width: 100%;
+  max-width: 50rem;
+  font-size: 2rem;
+  padding: 3rem;
+  border-radius: 1rem;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.grupo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.grupo-input input,
+.grupo-input textarea {
+  border: none;
+  background-color: transparent;
+  border-bottom: solid 2px #2a1e35;
+  margin-bottom: 3rem;
+}
+
+.grupo-input textarea {
+  min-height: 10rem;
+  resize: vertical;
+}
+
+
+
+/* ADAPTACIÓN MÓVIL */
+/* Reglas que se aplican solo en pantallas chicas (mobile, 600px o menos). */
+
+@media (max-width: 600px) {
+  header,
+  footer {
+    flex-direction: column;
+  }
+
+  footer nav {
+    position: static;
+    transform: none;
+  }
+}
