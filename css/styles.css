@@ -2,16 +2,19 @@
 /* RESET Y BASE */
 /* Limpia los estilos por defecto del navegador y aplica la imagen de fondo del sitio. */
 
+/* Reset general (saca margen y padding de todo) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Hace que 1rem = 10px (truco del 62.5%) */
 html {
   font-size: 62.5%;
 }
 
+/* Body con fuente, colores y layout flex en columna */
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
@@ -25,6 +28,7 @@ body {
   position: relative;
 }
 
+/* Imagen de fondo fija con filtros (brillo, contraste, saturacion) */
 body::before {
   content: "";
   position: fixed;
@@ -52,6 +56,7 @@ body::before {
 /* TIPOGRAFÍA */
 /* Define los tamaños y pesos de los titulos h1 y h2 del sitio. */
 
+/* Titulo principal de cada pagina */
 h1 {
   font-size: 3rem;
   font-weight: 800;
@@ -59,6 +64,7 @@ h1 {
   margin: .5rem 0;
 }
 
+/* Subtitulos (ej: "Nuestros productos") */
 h2 {
   color: #fff7fb;
   font-size: 2.4rem;
@@ -73,6 +79,7 @@ h2 {
 /* CONTENIDO PRINCIPAL */
 /* Estructura del <main> donde va el contenido de cada pagina. */
 
+/* Contenedor central donde se ubica el contenido */
 main {
   width: 80%;
   margin: auto;
@@ -90,6 +97,7 @@ main {
 /* BOTONES Y COLORES */
 /* Clases reutilizables que aplico a cualquier elemento sin repetir codigo. */
 
+/* Estilo base del boton */
 .btn {
   border: none;
   font-size: 1.6rem;
@@ -98,22 +106,27 @@ main {
   border-radius: 1rem;
 }
 
+/* Fondo color marron */
 .bg-primary {
   background-color: #8b752d;
 }
 
+/* Fondo color dorado (botones) */
 .bg-secondary {
   background-color: #f2c66d;
 }
 
+/* Texto blanco */
 .text-light {
   color: #ffffff;
 }
 
+/* Texto oscuro casi negro */
 .text-dark {
   color: #2a1e35;
 }
 
+/* Texto dorado para titulos importantes */
 .text-secondary {
   color: #f2c66d;
 }
@@ -123,6 +136,7 @@ main {
 /* HEADER Y FOOTER */
 /* Estilos compartidos entre la cabecera y el pie de pagina. */
 
+/* Fondo violeta y layout flex para header y footer */
 header,
 footer {
   background: #504770;
@@ -139,11 +153,13 @@ footer {
 /* LOGO */
 /* Tamaño del logo y animacion al pasar el mouse por encima. */
 
+/* Contenedor del logo (a la izquierda del header) */
 .div-logo {
   margin-left: 2rem;
   font-weight: bold;
 }
 
+/* Tamaño de la imagen del logo */
 .logo-img {
   height: 9rem;
   width: auto;
@@ -151,6 +167,7 @@ footer {
   padding: 0.5rem;
 }
 
+/* Efecto zoom al pasar el mouse por el logo */
 .logo-img:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
@@ -161,6 +178,7 @@ footer {
 /* NAVEGACIÓN */
 /* Estilos del menu de Inicio y Contacto en el header. */
 
+/* Links del logo y del menu (sin subrayado) */
 .logo,
 .header-nav ul li a {
   text-decoration: none;
@@ -170,6 +188,7 @@ footer {
   padding: 1.5rem;
 }
 
+/* Listas del menu y de los iconos del footer (en fila, sin viñetas) */
 .header-nav ul,
 footer .footer-list {
   list-style: none;
@@ -182,16 +201,19 @@ footer .footer-list {
 /* FOOTER */
 /* Centra el texto del credito y ubica los iconos sociales a la derecha. */
 
+/* Footer con padding y posicion relativa */
 footer {
   justify-content: center;
   position: relative;
   padding: 1rem 2rem;
 }
 
+/* Texto del credito centrado */
 footer p {
   text-align: center;
 }
 
+/* Iconos sociales pegados a la derecha y centrados verticalmente */
 footer nav {
   position: absolute;
   right: 2rem;
@@ -199,10 +221,12 @@ footer nav {
   transform: translateY(-50%);
 }
 
+/* Espacio alrededor de cada icono social */
 .footer-list li {
   padding: 1rem;
 }
 
+/* Tamaño de los iconos sociales */
 .footer-list img {
   width: 4rem;
   padding: 0.5rem;
@@ -213,6 +237,7 @@ footer nav {
 /* PÁGINA HOME */
 /* Estilos del parrafo de bienvenida y las tarjetas de productos. */
 
+/* Parrafo de bienvenida (centrado) */
 .parrafo {
   width: 80%;
   text-align: center;
@@ -220,6 +245,7 @@ footer nav {
   padding: 3rem;
 }
 
+/* Contenedor flex de las tarjetas (se acomodan en filas) */
 .contenedor-tarjetas {
   margin-top: 2rem;
   display: flex;
@@ -228,6 +254,7 @@ footer nav {
   gap: 2rem;
 }
 
+/* Tarjeta individual de producto */
 .card {
   background-color: #8a79a8;
   color: #2a1e35;
@@ -244,6 +271,7 @@ footer nav {
   padding-bottom: 2rem;
 }
 
+/* Imagen dentro de la tarjeta */
 .card img {
   width: 100%;
   height: 16rem;
@@ -255,6 +283,7 @@ footer nav {
 /* DETALLES DE ITEMS */
 /* Lista de propiedades de cada item Dota mostrada como mini tabla. */
 
+/* Mini tabla con las propiedades del item (Heroe, Rareza, etc) */
 .item-detalle {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -268,15 +297,18 @@ footer nav {
   border-radius: 0.8rem;
 }
 
+/* Termino (la palabra de la izquierda: "Heroe", "Tipo", etc) */
 .item-detalle dt {
   font-weight: bold;
   color: #2a1e35;
 }
 
+/* Agrega ":" automaticamente al final del termino */
 .item-detalle dt::after {
   content: ":";
 }
 
+/* Descripcion (la palabra de la derecha, en italica) */
 .item-detalle dd {
   text-align: right;
   font-style: italic;
@@ -287,10 +319,12 @@ footer nav {
 /* PÁGINA CONTACTO */
 /* Estilos del formulario de contacto, inputs y textarea. */
 
+/* Titulo "Contactanos" */
 .titulo-contacto {
   margin: 2rem 0;
 }
 
+/* Caja violeta del formulario */
 .form-contacto {
   background-color: #8a79a8;
   color: #2a1e35;
@@ -303,6 +337,7 @@ footer nav {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Cada par label + input en columna */
 .grupo-input {
   display: flex;
   flex-direction: column;
@@ -310,14 +345,20 @@ footer nav {
   margin-bottom: 2rem;
 }
 
+/* Estilo compartido de los inputs y el textarea (linea de abajo, padding) */
 .grupo-input input,
 .grupo-input textarea {
   border: none;
   background-color: transparent;
-  border-bottom: solid 2px #2a1e35;
+  border-bottom: solid 3px #2a1e35;
   margin-bottom: 3rem;
+
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 1rem 0.5rem;
 }
 
+/* Caja del mensaje (multilinea, redimensionable verticalmente) */
 .grupo-input textarea {
   min-height: 10rem;
   resize: vertical;
@@ -329,11 +370,13 @@ footer nav {
 /* Reglas que se aplican solo en pantallas chicas (mobile, 600px o menos). */
 
 @media (max-width: 600px) {
+  /* Header y footer pasan a columna en mobile */
   header,
   footer {
     flex-direction: column;
   }
 
+  /* El nav del footer deja de ser absolute para no romper el layout */
   footer nav {
     position: static;
     transform: none;

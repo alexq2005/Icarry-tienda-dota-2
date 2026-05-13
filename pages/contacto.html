@@ -15,12 +15,14 @@
     <!-- HEADER -->
     <!-- Cabecera del sitio con el logo y el menu de navegacion. -->
     <header>
+      <!-- Logo a la izquierda (click lleva al inicio) -->
       <div class="div-logo">
         <a class="logo" href="../index.html">
           <img src="../img/logo.jpg" alt="iCarry — Tienda Dota 2" class="logo-img" />
         </a>
       </div>
 
+      <!-- Menu de navegacion a la derecha -->
       <nav class="header-nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
@@ -32,29 +34,42 @@
     <!-- Contenido principal de la pagina con el titulo y el formulario. -->
     <main>
 
+      <!-- Titulo de la pagina contacto -->
       <h1 class="titulo-contacto text-secondary">Contactanos</h1>
 
       <!-- Formulario -->
-      <!-- Campos para que el usuario deje su email y su mensaje. -->
+      <!-- Campos para que el usuario deje su nombre, email y mensaje. -->
       <form class="form-contacto" action="https://formspree.io/f/xgopzyyy" method="POST">
 
+        <!-- Campo nombre -->
+        <div class="grupo-input">
+          <label for="nombre">Su nombre:</label>
+          <input id="nombre" type="text" name="nombre" />
+        </div>
+
+        <!-- Campo email -->
         <div class="grupo-input">
           <label for="email">Su email:</label>
           <input id="email" type="email" name="email" />
         </div>
 
+        <!-- Campo mensaje (textarea multilinea) -->
         <div class="grupo-input">
           <label for="mensaje">Su mensaje:</label>
           <textarea id="mensaje" name="message"></textarea>
         </div>
 
+        <!-- Boton para enviar el formulario -->
         <button class="btn bg-secondary text-dark" type="submit">Enviar</button>
       </form>
     </main>
     <!-- FOOTER -->
     <!-- Pie de pagina con el credito del autor y los iconos sociales. -->
     <footer>
+      <!-- Credito del autor (centrado) -->
       <p>Sitio realizado por Alex Quiñones</p>
+
+      <!-- Iconos de redes sociales (a la derecha) -->
       <nav>
         <ul class="footer-list">
           <li><img src="../img/whatsapp.png" alt="logo de whatsapp" /></li>
