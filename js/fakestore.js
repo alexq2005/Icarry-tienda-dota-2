@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   titulo.style.width = "100%";
   contenedor.appendChild(titulo);
 
-  // llamo a fakestore
-  fetch("https://fakestoreapi.com/products")
+  // llamo a fakestore (vestimenta)
+  fetch("https://fakestoreapi.com/products/category/men's clothing?limit=4")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((prod) => {

@@ -10,11 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
   titulo.style.width = "100%";
   contenedor.appendChild(titulo);
 
-  // categorias de dummyjson
-  let categoria = "beauty";
+  // categorias de dummyjson (tecnologia)
+  let categoria = "smartphones";
 
-  let urlCategoria = `https://dummyjson.com/products/category/${categoria}`;
-  let url = "https://dummyjson.com/products";
+  let urlCategoria = `https://dummyjson.com/products/category/${categoria}?limit=4`;
 
   if (categoria) {
     const tituloCategoria = document.createElement("h3");

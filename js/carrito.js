@@ -70,6 +70,30 @@ const renderizarCarrito = () => {
     contenedor.appendChild(tarjeta);
   });
 
+  // calculo el total y lo limito a 2 decimales para evitar números largos
+  const total = carrito.reduce((acc, prod) => acc + prod.precio, 0);
+  const totalFormateado = total.toFixed(2);
+
+  // muestro el total
+  const textoTotal = document.createElement("p");
+  textoTotal.classList.add("total-carrito");
+  textoTotal.textContent = `Total a pagar: $${totalFormateado}`;
+
+  // boton de comprar
+  const btnComprar = document.createElement("button");
+  btnComprar.classList.add("btn", "bg-primary", "text-dark");
+  btnComprar.textContent = "Comprar";
+  
+  btnComprar.addEventListener("click", () => {
+    // importo vaciarCarrito de funcionesCarrito.js (ya importada arriba)
+    vaciarCarrito();
+    // importo mostrarMensaje de ui.js para avisar que compro (necesito importarla arriba)
+    import("./ui.js").then(({ mostrarMensaje }) => {
+      mostrarMensaje("¡Compra realizada con éxito! 🎉");
+    });
+    renderizarCarrito();
+  });
+
   // boton de vaciar todo
   const btnVaciar = document.createElement("button");
   btnVaciar.classList.add("btn", "btn-vaciar-carrito");
@@ -80,7 +104,19 @@ const renderizarCarrito = () => {
     renderizarCarrito();
   });
 
-  divAcciones.appendChild(btnVaciar);
+  // meto todo al contenedor de acciones
+  divAcciones.style.flexDirection = "column";
+  divAcciones.style.alignItems = "center";
+  divAcciones.style.gap = "2rem";
+
+  const divBotones = document.createElement("div");
+  divBotones.style.display = "flex";
+  divBotones.style.gap = "1rem";
+  divBotones.appendChild(btnComprar);
+  divBotones.appendChild(btnVaciar);
+
+  divAcciones.appendChild(textoTotal);
+  divAcciones.appendChild(divBotones);
 };
 
 // inicializar
