@@ -585,6 +585,12 @@ footer nav {
   color: #f2c66d;
   font-size: 2rem;
 }
- 
- . t o t a l - c a r r i t o   {   f o n t - s i z e :   2 . 4 r e m ;   c o l o r :   # f 2 c 6 6 d ;   m a r g i n :   2 r e m   0 ;   f o n t - w e i g h t :   b o l d ;   t e x t - a l i g n :   c e n t e r ;   w i d t h :   1 0 0 % ;   }  
- 
+
+.total-carrito {
+  font-size: 2.4rem;
+  color: #f2c66d;
+  margin: 2rem 0;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
