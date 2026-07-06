@@ -1,34 +1,50 @@
 
-/* RESET Y BASE */
-/* Limpia los estilos por defecto del navegador y aplica la imagen de fondo del sitio. */
 
-/* Reset general (saca margen y padding de todo) */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Hace que 1rem = 10px (truco del 62.5%) */
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; 
 }
 
-/* Body con fuente, colores y layout flex en columna */
 body {
   font-family: "Poppins", sans-serif;
   font-size: 1.6rem;
-  color: #fff7fb;
-  background-color: #75492f;
+  color: #fff7fb; 
+  background-color: #120e16; 
 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
   position: relative;
 }
 
-/* Imagen de fondo fija con filtros (brillo, contraste, saturacion) */
+
 body::before {
   content: "";
   position: fixed;
@@ -43,50 +59,52 @@ body::before {
   background-position: center;
   background-repeat: no-repeat;
 
-  filter:
-    brightness(1.05)
-    contrast(1.15)
-    saturate(1.4);
-
-  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.35);
+  
+  filter: brightness(0.35) contrast(1.1) saturate(0.8);
+  box-shadow: inset 0 0 0 2000px rgba(18, 14, 24, 0.4);
 }
 
 
 
-/* TIPOGRAFÍA */
-/* Define los tamaños y pesos de los titulos h1 y h2 del sitio. */
 
-/* Titulo principal de cada pagina */
+
+
+h1, h2, h3, .hud-text {
+  font-family: "Oxanium", sans-serif; 
+}
+
 h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 800;
   line-height: 1.15;
   margin: .5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #f2c66d; 
 }
 
-/* Subtitulos (ej: "Nuestros productos") */
 h2 {
   color: #fff7fb;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   font-weight: 700;
   line-height: 1.2;
   text-align: center;
   margin: 3rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 
 
 
-/* CONTENIDO PRINCIPAL */
-/* Estructura del <main> donde va el contenido de cada pagina. */
 
-/* Contenedor central donde se ubica el contenido */
+
+
 main {
   width: 80%;
+  max-width: 1200px;
   margin: auto;
-  padding-bottom: 2rem;
-
+  padding-bottom: 4rem;
   flex: 1;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,126 +112,143 @@ main {
 
 
 
-/* BOTONES Y COLORES */
-/* Clases reutilizables que aplico a cualquier elemento sin repetir codigo. */
 
-/* Estilo base del boton */
+
+
 .btn {
   border: none;
   font-size: 1.6rem;
-  font-weight: bold;
-  padding: 1.6rem;
-  border-radius: 1rem;
+  font-weight: 700;
+  font-family: "Oxanium", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1.6rem 2.4rem;
+  border-radius: 10px; 
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Fondo color marron */
 .bg-primary {
-  background-color: #8b752d;
+  background-color: #f2c66d; 
+  color: #120e16;
+}
+.bg-primary:hover {
+  background-color: #dbb056;
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(242, 198, 109, 0.15);
 }
 
-/* Fondo color dorado (botones) */
 .bg-secondary {
-  background-color: #f2c66d;
+  background-color: #8a79a8; 
+  color: #fff7fb;
+}
+.bg-secondary:hover {
+  background-color: #9d8dbb;
+  transform: scale(1.03);
 }
 
-/* Texto blanco */
-.text-light {
-  color: #ffffff;
-}
-
-/* Texto oscuro casi negro */
-.text-dark {
-  color: #2a1e35;
-}
-
-/* Texto dorado para titulos importantes */
-.text-secondary {
-  color: #f2c66d;
-}
+.text-light { color: #fff7fb; }
+.text-dark { color: #120e16; }
+.text-secondary { color: #f2c66d; }
 
 
 
-/* HEADER Y FOOTER */
-/* Estilos compartidos entre la cabecera y el pie de pagina. */
 
-/* Fondo violeta y layout flex para header y footer */
-header,
-footer {
-  background: #504770;
-  color: #ebe2db;
+
+
+header {
+  background: rgba(18, 14, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #f2c66d; 
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0 2rem;
+}
+
+footer {
+  background: #191422; 
+  border-top: 1px solid #322544;
+  color: #8a79a8; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem 2rem;
 }
 
 
 
-/* LOGO */
-/* Tamaño del logo y animacion al pasar el mouse por encima. */
 
-/* Contenedor del logo (a la izquierda del header) */
+
+
 .div-logo {
-  margin-left: 2rem;
-  font-weight: bold;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: #f2c66d;
 }
 
-/* Tamaño de la imagen del logo */
 .logo-img {
-  height: 9rem;
+  height: 8rem;
   width: auto;
   display: block;
   padding: 0.5rem;
-}
-
-/* Efecto zoom al pasar el mouse por el logo */
-.logo-img:hover {
-  transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
+.logo-img:hover {
+  transform: scale(1.05);
+}
 
 
-/* NAVEGACIÓN */
-/* Estilos del menu de Inicio y Contacto en el header. */
 
-/* Links del logo y del menu (sin subrayado) */
+
+
+
 .logo,
 .header-nav ul li a {
   text-decoration: none;
+  font-family: "Oxanium", sans-serif;
   font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: #fff7fb;
   display: inline-block;
   padding: 1.5rem;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
-/* Listas del menu y de los iconos del footer (en fila, sin viñetas) */
+.header-nav ul li a:hover {
+  color: #f2c66d;
+  text-shadow: 0 0 10px rgba(242, 198, 109, 0.3);
+}
+
 .header-nav ul,
 footer .footer-list {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 
 
-/* FOOTER */
-/* Centra el texto del credito y ubica los iconos sociales a la derecha. */
 
-/* Footer con padding y posicion relativa */
-footer {
-  justify-content: center;
-  position: relative;
-  padding: 1rem 2rem;
-}
 
-/* Texto del credito centrado */
+
 footer p {
   text-align: center;
+  font-size: 1.4rem;
 }
 
-/* Iconos sociales pegados a la derecha y centrados verticalmente */
 footer nav {
   position: absolute;
   right: 2rem;
@@ -221,164 +256,332 @@ footer nav {
   transform: translateY(-50%);
 }
 
-/* Espacio alrededor de cada icono social */
-.footer-list li {
-  padding: 1rem;
-}
-
-/* Tamaño de los iconos sociales */
 .footer-list img {
-  width: 4rem;
+  width: 3.5rem;
   padding: 0.5rem;
+  filter: grayscale(100%) opacity(0.7);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.footer-list img:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.1);
 }
 
 
 
-/* PÁGINA HOME */
-/* Estilos del parrafo de bienvenida y las tarjetas de productos. */
 
-/* Parrafo de bienvenida (centrado) */
+
+
 .parrafo {
   width: 80%;
+  max-width: 800px;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  line-height: 1.6;
   padding: 3rem;
+  color: #e3dbe8;
 }
 
-/* Contenedor flex de las tarjetas (se acomodan en filas) */
 .contenedor-tarjetas {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
 }
 
-/* Tarjeta individual de producto */
+
 .card {
-  background-color: #8a79a8;
-  color: #2a1e35;
-  width: 20rem;
-
-  border-radius: 1rem;
+  background-color: #191422; 
+  color: #fff7fb;
+  width: 24rem; 
+  border: 1px solid #322544; 
+  border-radius: 10px;
   overflow: hidden;
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-
+  gap: 1.5rem;
   padding-bottom: 2rem;
+  
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Imagen dentro de la tarjeta */
+.card:hover {
+  border-color: #f2c66d; 
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(242, 198, 109, 0.1);
+}
+
 .card img {
   width: 100%;
-  height: 16rem;
+  height: 20rem; 
   object-fit: cover;
+  border-bottom: 1px solid #322544;
+  transition: border-color 0.25s ease;
+}
+
+.card:hover img {
+  border-bottom-color: #f2c66d;
+}
+
+
+.card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 
 
-/* DETALLES DE ITEMS */
-/* Lista de propiedades de cada item Dota mostrada como mini tabla. */
 
-/* Mini tabla con las propiedades del item (Heroe, Rareza, etc) */
+
+
 .item-detalle {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.4rem 1rem;
+  gap: 0.6rem 1rem;
 
-  background-color: #8a79a8;
-  color: #2a1e35;
+  background-color: #1e1927; 
+  border: 1px solid #2f253e; 
   width: 90%;
   font-size: 1.2rem;
-  padding: 1rem 1.5rem;
-  border-radius: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 6px;
 }
 
-/* Termino (la palabra de la izquierda: "Heroe", "Tipo", etc) */
 .item-detalle dt {
-  font-weight: bold;
-  color: #2a1e35;
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+  color: #a59bb5; 
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Agrega ":" automaticamente al final del termino */
 .item-detalle dt::after {
   content: ":";
 }
 
-/* Descripcion (la palabra de la derecha, en italica) */
 .item-detalle dd {
   text-align: right;
-  font-style: italic;
+  color: #fff7fb;
+  font-weight: 400;
 }
 
 
 
-/* PÁGINA CONTACTO */
-/* Estilos del formulario de contacto, inputs y textarea. */
 
-/* Titulo "Contactanos" */
+
+
 .titulo-contacto {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
-/* Caja violeta del formulario */
 .form-contacto {
-  background-color: #8a79a8;
-  color: #2a1e35;
+  background-color: #191422;
+  color: #fff7fb;
   width: 100%;
-  max-width: 50rem;
-  font-size: 2rem;
-  padding: 3rem;
-  border-radius: 1rem;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 55rem;
+  font-size: 1.6rem;
+  padding: 4rem;
+  border: 1px solid #322544;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Cada par label + input en columna */
 .grupo-input {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-/* Estilo compartido de los inputs y el textarea (linea de abajo, padding) */
+.grupo-input label {
+  font-family: "Oxanium", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #a59bb5;
+}
+
 .grupo-input input,
 .grupo-input textarea {
   border: none;
-  background-color: transparent;
-  border-bottom: solid 3px #2a1e35;
-  margin-bottom: 3rem;
-
-  font-family: inherit;
-  font-size: 1.8rem;
-  padding: 1rem 0.5rem;
+  background-color: #120e16;
+  color: #fff7fb;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  border-bottom: 2px solid #322544;
+  transition: all 0.3s ease;
+  border-radius: 4px 4px 0 0;
 }
 
-/* Caja del mensaje (multilinea, redimensionable verticalmente) */
+.grupo-input input:focus,
+.grupo-input textarea:focus {
+  outline: none;
+  background-color: #1a1523;
+  border-bottom: 2px solid #f2c66d;
+}
+
 .grupo-input textarea {
-  min-height: 10rem;
+  min-height: 12rem;
   resize: vertical;
 }
 
+.form-contacto .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
 
 
-/* ADAPTACIÓN MÓVIL */
-/* Reglas que se aplican solo en pantallas chicas (mobile, 600px o menos). */
 
-@media (max-width: 600px) {
-  /* Header y footer pasan a columna en mobile */
-  header,
-  footer {
+
+
+
+@media (max-width: 768px) {
+  header {
     flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .header-nav ul {
+    gap: 1rem;
+  }
+  
+  .header-nav ul li a {
+    padding: 0.8rem;
+    font-size: 1.6rem;
   }
 
-  /* El nav del footer deja de ser absolute para no romper el layout */
+  footer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
   footer nav {
     position: static;
     transform: none;
   }
+}
+
+
+
+
+
+
+.header-nav ul li a.carrito-icono {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#contador-carrito {
+  background-color: #f2c66d;
+  color: #120e16;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: "Oxanium", sans-serif;
+  padding: 0.2rem 0.8rem;
+  border-radius: 4px; 
+  display: inline-block;
+  min-width: 2.4rem;
+  text-align: center;
+}
+
+.mensaje-carrito-vacio {
+  font-family: "Oxanium", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  color: #a59bb5;
+  margin: 6rem 0;
+  width: 100%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.btn-eliminar-carrito {
+  background-color: #a33845; 
+  color: #fff7fb;
+  width: 90%;
+  margin-top: 1rem;
+}
+
+.btn-eliminar-carrito:hover {
+  background-color: #8c2a36;
+}
+
+.btn-vaciar-carrito {
+  background-color: #322544; 
+  color: #fff7fb;
+  padding: 1.6rem 3.2rem;
+  border: 1px solid #504770;
+}
+
+.btn-vaciar-carrito:hover {
+  background-color: #504770;
+  border-color: #8a79a8;
+  transform: scale(1.05);
+}
+
+.acciones-carrito {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 4rem 0;
+}
+
+
+
+
+
+
+#toast-container {
+  position: fixed;
+  top: 9rem; 
+  right: 2rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  pointer-events: none; 
+}
+
+.hud-toast {
+  background: rgba(25, 20, 34, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #f2c66d;
+  color: #fff7fb;
+  font-family: 'Oxanium', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1.6rem 2.4rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(242, 198, 109, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 250px;
+  max-width: 400px;
+  pointer-events: auto; 
+  
+  transform: translateX(120%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.35s ease;
+  opacity: 0;
+}
+
+.hud-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hud-toast-icon {
+  color: #f2c66d;
+  font-size: 2rem;
 }

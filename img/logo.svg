@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Logo iCarry — versión 3D
+     Gema facetada con múltiples caras simulando volumen, sombra
+     proyectada en el piso, y texto con efecto extrudido.
+     Todo hecho con polígonos SVG y gradientes, sin imágenes. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="100" viewBox="0 0 320 100">
+
+  <defs>
+    <!-- Gradientes para cada cara de la gema (luces distintas) -->
+    <linearGradient id="faceTop" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff8dc"/>
+      <stop offset="100%" stop-color="#ffd87a"/>
+    </linearGradient>
+    <linearGradient id="faceRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f2c66d"/>
+      <stop offset="100%" stop-color="#a87f2a"/>
+    </linearGradient>
+    <linearGradient id="faceLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a87f2a"/>
+      <stop offset="100%" stop-color="#d9a849"/>
+    </linearGradient>
+    <linearGradient id="faceBottomRight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c4a96e"/>
+      <stop offset="100%" stop-color="#7a5c1f"/>
+    </linearGradient>
+    <linearGradient id="faceBottomLeft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8d6920"/>
+      <stop offset="100%" stop-color="#5c3d05"/>
+    </linearGradient>
+
+    <!-- Sombra borrosa abajo de la gema -->
+    <radialGradient id="floorShadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.5)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+    </radialGradient>
+
+    <!-- Sombra de "respaldo" del texto para efecto 3D -->
+    <filter id="textShadow">
+      <feOffset dx="2" dy="2" in="SourceAlpha" result="off"/>
+      <feFlood flood-color="#2a1e35" flood-opacity="0.7"/>
+      <feComposite in2="off" operator="in"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Resplandor sutil alrededor de la gema -->
+    <filter id="bloom" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============ SOMBRA EN EL PISO ============ -->
+  <ellipse cx="42" cy="84" rx="28" ry="5" fill="url(#floorShadow)"/>
+
+  <!-- ============ GEMA 3D (rombo facetado) ============ -->
+  <!-- Coordenadas pensadas para que las caras se "encuentren" en el centro.
+       Puntos: top (42,12), right (74,38), bottom (42,78), left (10,38), centro (42,38). -->
+  <g filter="url(#bloom)">
+
+    <!-- Cara superior derecha (la más iluminada) -->
+    <polygon points="42,12  74,38  42,38" fill="url(#faceTop)"/>
+
+    <!-- Cara superior izquierda (también iluminada pero un poco menos) -->
+    <polygon points="42,12  10,38  42,38" fill="url(#faceRight)" opacity="0.95"/>
+
+    <!-- Cara inferior derecha (en sombra) -->
+    <polygon points="74,38  42,78  42,38" fill="url(#faceBottomRight)"/>
+
+    <!-- Cara inferior izquierda (más oscura) -->
+    <polygon points="10,38  42,78  42,38" fill="url(#faceBottomLeft)"/>
+
+    <!-- ====== Brillo especular en cara superior derecha ====== -->
+    <polygon points="42,15  60,32  42,32" fill="#ffffff" opacity="0.55"/>
+
+    <!-- ====== Líneas de las facetas (definicion) ====== -->
+    <line x1="42" y1="12" x2="42" y2="78" stroke="#5c3d05" stroke-width="0.6" opacity="0.5"/>
+    <line x1="10" y1="38" x2="74" y2="38" stroke="#5c3d05" stroke-width="0.6" opacity="0.5"/>
+
+    <!-- ====== Pequeño brillo puntual ====== -->
+    <ellipse cx="34" cy="22" rx="4" ry="2.5" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- ============ TEXTO "iCARRY" con efecto 3D ============ -->
+  <!-- Capa de "respaldo" (atrás, más oscura) para simular profundidad -->
+  <text x="93" y="48"
+        font-family="'Poppins', Arial, sans-serif"
+        font-size="32"
+        font-weight="900"
+        fill="#5c3d05"
+        letter-spacing="2">iCARRY</text>
+
+  <!-- Capa frontal (el texto principal con highlight) -->
+  <text x="90" y="45"
+        font-family="'Poppins', Arial, sans-serif"
+        font-size="32"
+        font-weight="900"
+        letter-spacing="2"
+        filter="url(#textShadow)">
+    <tspan fill="#ffd87a">i</tspan><tspan fill="#fff7fb">CARRY</tspan>
+  </text>
+
+  <!-- ============ Sub-texto pequeño ============ -->
+  <text x="92" y="68"
+        font-family="'Poppins', Arial, sans-serif"
+        font-size="9"
+        font-weight="600"
+        fill="#f2c66d"
+        letter-spacing="6"
+        opacity="0.9">DOTA 2 MARKETPLACE</text>
+
+  <!-- Linea decorativa -->
+  <line x1="92" y1="76" x2="280" y2="76" stroke="#f2c66d" stroke-width="0.6" opacity="0.4"/>
+</svg>

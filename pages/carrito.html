@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- fuente -->
+    <!-- fuentes de google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
     
-    <!-- mis estilos -->
+    <!-- css del proyecto -->
     <link rel="stylesheet" href="../css/styles.css" />
-    <title>Contacto — iCarry</title>
+    <title>Carrito — iCarry</title>
   </head>
 
   <body>
-    <!-- cabecera de la pagina -->
+    <!-- cabecera principal -->
     <header>
       <div class="div-logo">
         <a class="logo" href="../index.html">
@@ -24,6 +24,7 @@
         </a>
       </div>
 
+      <!-- navegacion -->
       <nav class="header-nav">
         <ul>
           <li><a href="../index.html">Inicio</a></li>
@@ -37,29 +38,21 @@
       </nav>
     </header>
 
-    <!-- formulario de contacto -->
+    <!-- pagina del carrito -->
     <main>
-      <h1 class="titulo-contacto text-secondary">Contactanos</h1>
+      <h1 class="titulo-contacto text-secondary">Carrito de compras</h1>
 
-      <!-- mando a formspree -->
-      <form class="form-contacto" action="https://formspree.io/f/xgopzyyy" method="POST">
-        <div class="grupo-input">
-          <label for="email">Su email:</label>
-          <input id="email" type="email" name="email" />
-        </div>
+      <!-- aca van los items del carrito -->
+      <section id="contenedor-carrito" class="contenedor-tarjetas"></section>
 
-        <div class="grupo-input">
-          <label for="mensaje">Su mensaje:</label>
-          <textarea id="mensaje" name="message"></textarea>
-        </div>
-
-        <button class="btn bg-secondary text-dark" type="submit">Enviar</button>
-      </form>
+      <!-- botones del carrito -->
+      <div id="acciones-carrito" class="acciones-carrito"></div>
     </main>
 
     <!-- pie -->
     <footer>
       <p>Sitio realizado por Alex Quiñones</p>
+      
       <nav>
         <ul class="footer-list">
           <li><img src="../img/whatsapp.png" alt="wpp" /></li>
@@ -68,7 +61,7 @@
       </nav>
     </footer>
 
-    <!-- script -->
-    <script type="module" src="../js/contacto.js"></script>
+    <!-- scripts -->
+    <script type="module" src="../js/carrito.js"></script>
   </body>
 </html>

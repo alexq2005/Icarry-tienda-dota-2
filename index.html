@@ -3,43 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- fuentes de google -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,600;0,700;0,800;1,100;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;800&family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+    
+    <!-- mi css -->
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Tienda Dota 2</title>
   </head>
 
   <body>
-
-    <!-- HEADER -->
-    <!-- Cabecera del sitio con el logo y el menu de navegacion. -->
+    <!-- cabecera -->
     <header>
-      <!-- Logo a la izquierda (click lleva al inicio) -->
       <div class="div-logo">
         <a class="logo" href="./index.html">
-          <img src="./img/logo.jpg" alt="iCarry — Tienda Dota 2" class="logo-img" />
+          <img src="./img/logo.svg" alt="iCarry" class="logo-img" />
         </a>
       </div>
 
-      <!-- Menu de navegacion a la derecha -->
       <nav class="header-nav">
         <ul>
           <li><a href="./index.html">Inicio</a></li>
           <li><a href="./pages/contacto.html">Contacto</a></li>
+          <li>
+            <a href="./pages/carrito.html" class="carrito-icono">
+              🛒 <span id="contador-carrito">0</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <!-- MAIN -->
-    <!-- Contenido principal de la pagina con el titulo y los productos. -->
+    <!-- contenido principal -->
     <main>
-
-      <!-- Titulo de bienvenida -->
       <h1 class="titulo-home text-secondary">Bienvenidos a la tienda</h1>
 
-      <!-- Parrafo de presentacion de la tienda -->
       <p class="parrafo">
         En <strong>iCarry</strong> encontrás los items más buscados de Dota 2: <em>Arcanas</em>, <em>Personas</em>, sets
         <em>Inmortal</em> y bundles exclusivos.
@@ -47,83 +48,38 @@
         del mercado para mejorar tu colección sin vueltas.
       </p>
 
-      <!-- Productos -->
-      <!-- Tarjetas con los items de Dota 2 que ofrece la tienda. -->
+      <!-- seccion de mis productos dota -->
       <section>
-        <!-- Subtitulo de la seccion -->
         <h2 class="titulo-productos">Nuestros productos</h2>
+        <!-- aca se inyectan las tarjetas con js -->
+        <div id="contenedor-tarjetas" class="contenedor-tarjetas"></div>
+      </section>
 
-        <!-- Contenedor flex con las 3 tarjetas -->
-        <div class="contenedor-tarjetas">
-
-          <!-- Tarjeta 1: Bladeform Legacy (Juggernaut) -->
-          <article class="card text-dark">
-            <img src="./img/jugger.png" alt="Autographed Bladeform Legacy" />
-            <h3>Bladeform Legacy</h3>
-            <dl class="item-detalle">
-              <dt>Héroe</dt>     <dd>Juggernaut</dd>
-              <dt>Ranura</dt>    <dd>Hero Base</dd>
-              <dt>Tipo</dt>      <dd>Wearable</dd>
-              <dt>Rareza</dt>    <dd>Arcana</dd>
-              <dt>Calidad</dt>   <dd>Autographed</dd>
-              <dt>Estilos</dt>   <dd>0 de 2</dd>
-            </dl>
-            <p>Precio: $29.91</p>
-            <button class="btn bg-secondary text-dark">Agregar al carrito</button>
-          </article>
-
-          <!-- Tarjeta 2: Bloodfeather Finery (Queen of Pain) -->
-          <article class="card text-dark">
-            <img src="./img/bloodfeather.png" alt="Bloodfeather Finery — Persona de Queen of Pain" />
-            <h3>Bloodfeather Finery</h3>
-            <dl class="item-detalle">
-              <dt>Héroe</dt>     <dd>Queen of Pain</dd>
-              <dt>Ranura</dt>    <dd>Persona</dd>
-              <dt>Tipo</dt>      <dd>Wearable</dd>
-              <dt>Rareza</dt>    <dd>Arcana</dd>
-              <dt>Calidad</dt>   <dd>Standard</dd>
-              <dt>Estilos</dt>   <dd>0 de 2</dd>
-            </dl>
-            <p>Precio: $34.50</p>
-            <button class="btn bg-secondary text-dark">Agregar al carrito</button>
-          </article>
-
-          <!-- Tarjeta 3: Mask of Metira (Mirana) -->
-          <article class="card text-dark">
-            <img src="./img/mask-metira.png" alt="Mask of Metira of the Crimson Witness — Phantom Assassin" />
-            <h3>Mask of Metira</h3>
-            <dl class="item-detalle">
-              <dt>Héroe</dt>     <dd>Mirana</dd>
-              <dt>Ranura</dt>    <dd>Head</dd>
-              <dt>Tipo</dt>      <dd>Wearable</dd>
-              <dt>Rareza</dt>    <dd>Inmortal</dd>
-              <dt>Calidad</dt>   <dd>Standard</dd>
-              <dt>Estilos</dt>   <dd>1 de 1</dd>
-            </dl>
-            <p>Precio: $18.75</p>
-            <button class="btn bg-secondary text-dark">Agregar al carrito</button>
-          </article>
-
-        </div>
+      <!-- seccion de dummyjson -->
+      <section>
+        <div id="contenedor-productos-dummy" class="contenedor-tarjetas" style="margin-top: 4rem;"></div>
+      </section>
+      
+      <!-- seccion de fakestore -->
+      <section>
+        <div id="contenedor-productos-fakestore" class="contenedor-tarjetas" style="margin-top: 4rem;"></div>
       </section>
     </main>
 
-    
-    
-    <!-- FOOTER -->
-    <!-- Pie de pagina con el credito del autor y los iconos sociales. -->
+    <!-- pie de pagina -->
     <footer>
-      <!-- Credito del autor (centrado) -->
-      <p>Sitio realizado por Alex Quiñones para Talento Tech</p>
-
-      <!-- Iconos de redes sociales (a la derecha) -->
+      <p>Sitio realizado por Alex Quiñones</p>
       <nav>
         <ul class="footer-list">
-          <li><img src="./img/whatsapp.png" alt="logo de whatsapp" /></li>
-          <li><img src="./img/social.png" alt="logo de instagram" /></li>
+          <li><img src="./img/whatsapp.png" alt="wpp" /></li>
+          <li><img src="./img/social.png" alt="ig" /></li>
         </ul>
       </nav>
     </footer>
 
+    <!-- scripts -->
+    <script type="module" src="./js/index.js"></script>
+    <script type="module" src="./js/dummyjson.js"></script>
+    <script type="module" src="./js/fakestore.js"></script>
   </body>
 </html>

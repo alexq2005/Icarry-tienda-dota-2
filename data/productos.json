@@ -1,0 +1,83 @@
+[
+  {
+    "id": "1",
+    "nombre": "Bladeform Legacy",
+    "precio": 29.91,
+    "img": "img/jugger.png",
+    "detalles": {
+      "Héroe": "Juggernaut",
+      "Ranura": "Hero Base",
+      "Tipo": "Wearable",
+      "Rareza": "Arcana",
+      "Calidad": "Autographed",
+      "Estilos": "0 de 2"
+    }
+  },
+  {
+    "id": "2",
+    "nombre": "Bloodfeather Finery",
+    "precio": 34.50,
+    "img": "img/bloodfeather.png",
+    "detalles": {
+      "Héroe": "Queen of Pain",
+      "Ranura": "Persona",
+      "Tipo": "Wearable",
+      "Rareza": "Arcana",
+      "Calidad": "Standard",
+      "Estilos": "0 de 2"
+    }
+  },
+  {
+    "id": "3",
+    "nombre": "Mask of Metira",
+    "precio": 18.75,
+    "img": "img/mask-metira.png",
+    "detalles": {
+      "Héroe": "Mirana",
+      "Ranura": "Head",
+      "Tipo": "Wearable",
+      "Rareza": "Inmortal",
+      "Calidad": "Standard",
+      "Estilos": "1 de 1"
+    }
+  },
+  {
+    "id": "4",
+    "nombre": "Pudge Plush Toy",
+    "precio": 24.99,
+    "img": "img/pudge_plush.png",
+    "detalles": {
+      "Héroe": "Pudge",
+      "Tipo": "Juguete",
+      "Rareza": "Legendaria",
+      "Material": "Felpa Premium",
+      "Tamaño": "25 cm"
+    }
+  },
+  {
+    "id": "5",
+    "nombre": "Beanie Logo Dota 2",
+    "precio": 15.50,
+    "img": "img/dota_beanie.png",
+    "detalles": {
+      "Héroe": "Todos",
+      "Tipo": "Gorro",
+      "Rareza": "Común",
+      "Material": "Lana Sintética",
+      "Talla": "Ajustable"
+    }
+  },
+  {
+    "id": "6",
+    "nombre": "T-Shirt Logo Dota 2",
+    "precio": 19.99,
+    "img": "img/dota_tshirt.png",
+    "detalles": {
+      "Héroe": "Todos",
+      "Tipo": "Remera",
+      "Rareza": "Rara",
+      "Material": "100% Algodón",
+      "Talle": "S / M / L / XL"
+    }
+  }
+]
